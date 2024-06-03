@@ -1,0 +1,8 @@
+# deps
+node_modules/
+/.env
+/.idea/.gitignore
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/skeleton-ddd-bun-hono-typescript.iml
