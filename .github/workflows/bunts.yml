@@ -10,32 +10,23 @@ jobs:
       matrix:
         node-version: [21.x]
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
-      - name: Install Bun
-        run: |
-          curl -fsSL https://bun.sh/install | bash
-        shell: bash
-
-      - name: Add Bun to PATH
-        run: |
-          echo 'export BUN_INSTALL="$HOME/.bun"' >> $GITHUB_ENV
-          echo 'export PATH="$BUN_INSTALL/bin:$PATH"' >> $GITHUB_ENV
-        shell: bash
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest  # Puedes especificar una versión específica si lo prefieres
 
       - name: Install dependencies
-        run: |
-          bun install
+        run: bun install
+
+      # Descomentar si tienes configuración para lint
+      # - name: Run lint
+      #   run: bun lint
 
       - name: Run build
-        run: |
-          bun run build --if-present
+        run: bun run build --if-present
 
-      # Descomentar los siguientes pasos si tienes lint y tests configurados
-      # - name: Run lint
-      #   run: |
-      #     bun lint
-
+      # Descomentar si tienes configuración para tests
       # - name: Run tests
-      #   run: |
-      #     bun test
+      #   run: bun test
