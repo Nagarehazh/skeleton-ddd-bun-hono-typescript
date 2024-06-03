@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "tsc",
+    "build": "bun build ./src/index.ts --outdir ./out",
     "dev": "bun run --hot src/index.ts",
     "start": "bun run typeorm migration:run && bun run --hot src/index.ts",
     "typeorm": "typeorm-ts-node-commonjs -d ./src/infrastructure/configs/database/db.ts",
