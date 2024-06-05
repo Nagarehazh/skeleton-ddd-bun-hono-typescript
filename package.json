@@ -1,4 +1,10 @@
 {
+  "name": "skeleton-ddd-bun-hono-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "url": "https://github.com/Nagarehazh/skeleton-ddd-bun-hono-typescript"
+  },
   "scripts": {
     "build": "bun build --target=bun ./src/index.ts --outdir ./dist",
     "dev": "bun run --hot src/index.ts",
